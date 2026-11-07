@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="calculator-card">
+    <!-- Header / Mode Bar -->
+    <div class="calc-header">
+      <div class="window-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <span class="calc-badge">STANDARD</span>
+    </div>
+
+    <!-- Screen / Display -->
+    <div class="calc-display">
+      <div class="previous-operand" id="previous-operand"></div>
+      <div class="current-operand" id="current-operand">0</div>
+    </div>
+
+    <!-- Keypad Grid -->
+    <div class="keypad">
+      <!-- Row 1 -->
+      <button type="button" class="btn btn-function" data-action="clear">AC</button>
+      <button type="button" class="btn btn-function" data-action="delete">⌫</button>
+      <button type="button" class="btn btn-function" data-operation="%">%</button>
+      <button type="button" class="btn btn-operator" data-operation="÷">÷</button>
+
+      <!-- Row 2 -->
+      <button type="button" class="btn btn-number" data-number="7">7</button>
+      <button type="button" class="btn btn-number" data-number="8">8</button>
+      <button type="button" class="btn btn-number" data-number="9">9</button>
+      <button type="button" class="btn btn-operator" data-operation="×">×</button>
+
+      <!-- Row 3 -->
+      <button type="button" class="btn btn-number" data-number="4">4</button>
+      <button type="button" class="btn btn-number" data-number="5">5</button>
+      <button type="button" class="btn btn-number" data-number="6">6</button>
+      <button type="button" class="btn btn-operator" data-operation="-">−</button>
+
+      <!-- Row 4 -->
+      <button type="button" class="btn btn-number" data-number="1">1</button>
+      <button type="button" class="btn btn-number" data-number="2">2</button>
+      <button type="button" class="btn btn-number" data-number="3">3</button>
+      <button type="button" class="btn btn-operator" data-operation="+">+</button>
+
+      <!-- Row 5 -->
+      <button type="button" class="btn btn-function" data-action="invert">±</button>
+      <button type="button" class="btn btn-number" data-number="0">0</button>
+      <button type="button" class="btn btn-number" data-number=".">.</button>
+      <button type="button" class="btn btn-equals" data-action="equals">=</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

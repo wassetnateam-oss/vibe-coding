@@ -1,0 +1,195 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 10% 20%, #1a1e29 0%, #0d0f14 90%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 20px;
+}
+
+/* Glassmorphism Calculator Frame */
+.calculator-card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(26, 31, 44, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Window Header */
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.window-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.calc-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #6c7993;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Display */
+.calc-display {
+  background: rgba(14, 17, 23, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 20px;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.previous-operand {
+  color: #7b88a3;
+  font-size: 1rem;
+  font-weight: 400;
+  min-height: 24px;
+  transition: all 0.2s ease;
+}
+
+.current-operand {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  transition: transform 0.1s ease;
+}
+
+/* Keypad Grid */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Base Button */
+.btn {
+  height: 64px;
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+/* Number Keys */
+.btn-number {
+  background: #252b3b;
+  color: #e2e8f0;
+}
+
+.btn-number:hover {
+  background: #2f364a;
+  color: #ffffff;
+}
+
+/* Function Keys (AC, Delete, %) */
+.btn-function {
+  background: #1e2330;
+  color: #7ed6df;
+  font-weight: 600;
+}
+
+.btn-function:hover {
+  background: #282f42;
+  color: #9fe5ec;
+}
+
+/* Operator Keys (+, -, *, /) */
+.btn-operator {
+  background: #ff9f1c;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.btn-operator:hover {
+  background: #fca934;
+  box-shadow: 0 0 16px rgba(255, 159, 28, 0.4);
+}
+
+/* Equals Key */
+.btn-equals {
+  background: #2ec4b6;
+  color: #ffffff;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.btn-equals:hover {
+  background: #39d9c9;
+  box-shadow: 0 0 16px rgba(46, 196, 182, 0.45);
+}
+
+/* Responsive tweaks for smaller mobile screens */
+@media (max-width: 380px) {
+  .calculator-card {
+    padding: 16px;
+    gap: 16px;
+  }
+  .btn {
+    height: 56px;
+    font-size: 1.15rem;
+  }
+  .current-operand {
+    font-size: 2rem;
+  }
+}
+
